@@ -1,4 +1,4 @@
-export const tasks = [
+export const subjects = [
     {
         id: 0,
         title: "Cuidado de enfermeria en salud mental",

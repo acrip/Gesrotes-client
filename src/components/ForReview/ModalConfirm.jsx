@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ModalDeleteAssociation() {
+function ModalConfirm({text}) {
   const [showModal, setShowModal] = useState(true);
 
   const handleAccept = () => {
@@ -25,7 +25,7 @@ function ModalDeleteAssociation() {
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center z-10">
           <div className="bg-white-strong w-70 h-44 p-10 rounded-lg shadow">
-            <p className="text-lg font mb-2 text-center">¿Está seguro que desea eliminar la asociación seleccionada?</p>
+            <p className="text-lg font mb-2 text-center">¿Está seguro que desea eliminar la {text}?</p>
             <div className="mt-4 flex justify-center gap-4">
               <button
                 className="bg-blood hover:bg-gray-400 text-white font-bold py-2 px-4 rounded"
@@ -48,4 +48,4 @@ function ModalDeleteAssociation() {
   );
 };
 
-export { ModalDeleteAssociation };
+export { ModalConfirm };

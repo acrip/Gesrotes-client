@@ -34,11 +34,11 @@ function TaskForm() {
           className="bg-slate-300 p-3 w-full mb-2 rounded-md"
         ></textarea>
         <button
-        className="bg-indigo-600 px-3 py-1 text-white"
+          className="bg-indigo-600 px-3 py-1 text-white"
         >Guardar</button>
       </form>
     </div>
   )
 }
 
-export default TaskForm
+export { TaskForm }
