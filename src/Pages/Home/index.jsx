@@ -3,7 +3,7 @@ import {Subjects} from '../Subjects/index'
 
 function Home() {
   return (
-    <Subjects></Subjects>
+    <div></div>
   );
 };
 

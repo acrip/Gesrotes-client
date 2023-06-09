@@ -4,8 +4,14 @@ import { TabDocentes } from './TabDocentes';
 import { TabRotes } from './TabRotes';
 import { TabTurnos } from './TabTurnos';
 import { TabDocumentos } from './TabDocumentos';
+import { useLocation } from 'react-router-dom';
+
 
 function TabMain({value}) {
+  const location = useLocation()
+  const pathname = location.pathname
+  const isActivePath = pathname.split('/')[3]
+
   const tabs = [
     { label: 'Estudiantes', content: <TabEstudiantes /> },
     { label: 'Profesores', content: <TabDocentes /> },
@@ -14,7 +20,15 @@ function TabMain({value}) {
     { label: 'Documentos', content: <TabDocumentos /> },
   ];
 
-  const [activeTab, setActiveTab] = useState(value);
+  const items  = {
+    estudiantes: 0,
+    profesores: 1,
+    rotes: 2,
+    turnos: 3,
+    documentos: 4
+  }
+
+  const [activeTab, setActiveTab] = useState(items[isActivePath]);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -26,7 +40,7 @@ function TabMain({value}) {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`px-4 py-2 font-medium w-80 ${index === activeTab ^ index === 0 ? 'bg-blue text-white rounded-t-xl ' : 'bg-white rounded-b-xl text-gray-700'
+            className={`px-4 py-2 font-medium w-80 ${index === activeTab ? 'bg-blue text-white rounded-t-xl ' : 'bg-white rounded-b-xl text-gray-700'
               }`}
             onClick={() => handleTabClick(index)}
           >

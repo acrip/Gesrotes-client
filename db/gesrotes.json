@@ -1,0 +1,232 @@
+{
+  "asignaturas": [
+    {
+      "id": 1,
+      "carreraId": 1,
+      "periodoId": 1,
+      "name": "Cuidado de enfermeria en salud mental"
+    },
+    {
+      "id": 2,
+      "carreraId": 1,
+      "periodoId": 1,
+      "name": "Cuidado al adulto mayor"
+    },
+    {
+      "id": 3,
+      "carreraId": 2,
+      "periodoId": 1,
+      "name": "Salud para deportistas"
+    }
+  ],
+  "carreras": [
+    {
+      "id": 1,
+      "name": "Enfermeria"
+    },
+    {
+      "id": 2,
+      "name": "Fisioterapia"
+    }
+  ],
+  "escenarios": [
+    {
+      "id": 1,
+      "carreraId": 1,
+      "periodoId": 1,
+      "name": "Hospital Susana Lopez"
+    },
+    {
+      "id": 2,
+      "carreraId": 1,
+      "periodoId": 1,
+      "name": "Hospital Santa Gracia"
+    },
+    {
+      "id": 3,
+      "carreraId": 1,
+      "periodoId": 1,
+      "name": "Hospital Santa Elena"
+    }
+  ],
+  "estudiantes": [
+    {
+      "id": 1,
+      "carreraId": 1,
+      "name": "Juan Osorio"
+    },
+    {
+      "id": 2,
+      "carreraId": 1,
+      "name": "Natalia Muñoz"
+    },
+    {
+      "id": 3,
+      "carreraId": 2,
+      "name": "Ana Paz"
+    },
+    {
+      "id": 4,
+      "carreraId": 2,
+      "name": "Sol Gil"
+    },
+    {
+      "id": 5,
+      "carreraId": 1,
+      "name": "Kal Ortiz"
+    },
+    {
+      "id": 6,
+      "carreraId": 2,
+      "name": "Andres Zapata"
+    }
+  ],
+  "estudianteAsignatura": [
+    {
+      "id": 1,
+      "estudianteId": 1,
+      "asignaturaId": 2
+    },
+    {
+      "id": 2,
+      "estudianteId": 2,
+      "asignaturaId": 2
+    },
+    {
+      "id": 3,
+      "estudianteId": 3,
+      "asignaturaId": 1
+    },
+    {
+      "id": 4,
+      "estudianteId": 4,
+      "asignaturaId": 1
+    },
+    {
+      "id": 5,
+      "estudianteId": 5,
+      "asignaturaId": 2
+    },
+    {
+      "id": 6,
+      "estudianteId": 6,
+      "asignaturaId": 2
+    }
+  ],
+  "etiquetas": [
+    {
+      "id": 1,
+      "escenarioId": 1,
+      "name": "Primer piso"
+    },
+    {
+      "id": 2,
+      "escenarioId": 2,
+      "name": "Segundo piso"
+    },
+    {
+      "id": 3,
+      "escenarioId": 1,
+      "name": "Segundo piso"
+    },
+    {
+      "id": 4,
+      "escenarioId": 3,
+      "name": "Segundo piso"
+    },
+    {
+      "id": 5,
+      "escenarioId": 3,
+      "name": "Primer piso"
+    }
+  ],
+  "jornadas": [
+    {
+      "id": 1,
+      "escenarioId": 1,
+      "name": "Mañana",
+      "horaInicio": "2023-06-08 21:30:00",
+      "horaFin": "2023-06-08 06:30:00"
+    },
+    {
+      "id": 2,
+      "escenarioId": 2,
+      "name": "Tarde",
+      "horaInicio": "2023-06-08 21:30:00",
+      "horaFin": "2023-06-08 06:30:00"
+    },
+    {
+      "id": 3,
+      "escenarioId": 3,
+      "name": "Noche",
+      "horaInicio": "2023-06-08 21:30:00",
+      "horaFin": "2023-06-08 06:30:00"
+    }
+  ],
+  "periodoAcademido": [
+    {
+      "name": "Periodo I",
+      "fechaInicio": "2023-01-01",
+      "fechaFin": "2023-01-06"
+    }
+  ],
+  "servicios": [
+    {
+      "id": 1,
+      "escenarioId": 1,
+      "name": "Cardiologia"
+    },
+    {
+      "id": 2,
+      "escenarioId": 1,
+      "name": "Urgencias"
+    },
+    {
+      "id": 2,
+      "escenarioId": 3,
+      "name": "Pediatria"
+    }
+  ],
+  "servicioEtiqueta": [
+    {
+      "id": 1,
+      "servicioId": 1,
+      "etiquetaId": 1
+    },
+    {
+      "id": 2,
+      "servicioId": 1,
+      "etiquetaId": 2
+    }
+  ],
+  "turnos": [
+    {
+      "id": 1,
+      "escenarioId": 1,
+      "etiquetaId": 1,
+      "jornadaId": 1,
+      "estudianteId": 1
+    },
+    {
+      "id": 2,
+      "escenarioId": 2,
+      "etiquetaId": 2,
+      "jornadaId": 2,
+      "estudianteId": 2
+    },
+    {
+      "id": 3,
+      "escenarioId": 2,
+      "etiquetaId": 3,
+      "jornadaId": 3,
+      "estudianteId": 3
+    },
+    {
+      "id": 4,
+      "escenarioId": 3,
+      "etiquetaId": 3,
+      "jornadaId": 3,
+      "estudianteId": 3
+    }
+  ]
+}

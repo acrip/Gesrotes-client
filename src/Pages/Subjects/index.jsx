@@ -3,8 +3,15 @@ import { Outlet } from 'react-router-dom'
 import { Layout } from '../../components/Layout/index'
 import { useState, useEffect } from 'react';
 import { ModalSubjectDetail } from '../../components/SubjectDetail';
+import { useQuery } from 'react-query'
+import { getAsignaturas } from '../../api/gesrotesAPI'
 
 function Subjects() {
+  
+  const {isLoading, data, isError, error} = useQuery({
+    queryKey: ['asignaturas'],
+    queryFn: getAsignaturas
+  })
 {/*  const { subjects } = useContext(SubjectContext)*/}
   const [placeholder, setPlaceholder] = useState('Ingrese el nombre de la asignatura');
 
@@ -14,11 +21,12 @@ function Subjects() {
 
   const [items, setItems] = useState(null)
 
-  useEffect(() => {
+
+{ /* useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/products')
     .then(response => response.json())
     .then(data => setItems(data))
-  }, [])
+  }, [])*/}
 
   return (
     <Layout>
@@ -47,8 +55,8 @@ function Subjects() {
           </div>
         </div>
         <div className='grid grid-cols-3 m-5 gap-5'>
-          {items?.map((item) => (
-            <CardSubject key={item.id} data={item} />
+          {data?.map((item) => (
+            <CardSubject key={item.id_subject} data={item} />
           ))}
         </div>
       </div>

@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { SubjectContext } from '../../Context'
+import { Link, useParams } from 'react-router-dom';
 
 function NavControlTurnos() {
+  // const context = useContext(SubjectContext)
+  const { id } = useParams()
+
   return (
     <div className="flex p-4 mr-5 items-center gap-3">
       <button className="border border-gray-500 rounded-lg bg-blue text-white px-4 py-2">Gestión Estudiantes</button>
-      <button className="border border-gray-500 rounded-lg  bg-blue text-white px-4 py-2">Gestión Etiquetas</button>
+      <button className="border border-gray-500 rounded-lg  bg-blue text-white px-4 py-2">
+
+        <Link to={`/asignaturas/${id}/turnos/gestion-etiquetas`}>Gestión Etiquetas</Link>
+      </button>
       <button className="border border-gray-500 rounded-lg  bg-blue text-white px-4 py-2">Alimentación</button>
       <div className="relative rounded-full bg-white flex items-center pl-3 h-10 ">
         <input

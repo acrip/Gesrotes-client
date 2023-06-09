@@ -1,6 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Breadcrumb () {
+  const location = useLocation()
+  const parts = location.pathname.split('/')
+
   const items = [
     { label: '> Home', url: '/' },
     { label: '> Products', url: '/asignaturas' },
