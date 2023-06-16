@@ -1,9 +1,7 @@
 import React from 'react';
-import { SubjectContext } from '../../Context'
 import { Link, useParams } from 'react-router-dom';
 
 function NavControlTurnos() {
-  // const context = useContext(SubjectContext)
   const { id } = useParams()
 
   return (

@@ -1,18 +1,22 @@
-import React, { useContext } from 'react';
-import { SubjectContext } from '../../Context'
-import { useNavigate, Link } from 'react-router-dom';
-
+import { useQuery } from 'react-query'
+import { useNavigate, Link, useParams } from 'react-router-dom';
+import { getAsignaturaById } from "../../api/gesrotesAPI";
 
 function ModalSubjectDetail() {
-  const context = useContext(SubjectContext)
+  
+  const {isLoading, data: subject, isError, error} = useQuery({
+    queryKey: ['asignatura'],
+    queryFn: () => getAsignaturaById(id)
+  })
 
-  const navigate = useNavigate();
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30">
       <div className="bg-white text-center w-2/3 h-2/3 border-blue">
-        <h2 className="text-xl font-bold uppercase bg-blue text-white p-2">{context.currentData.data.category.name}</h2>
-        <p className="text-md text-blue font-bold uppercase m-10">{context.currentData.data.title}</p>
+        <h2 className="text-xl font-bold bg-blue text-white p-2">ESTADO DE LA ASIGNATURA</h2>
+        <p className="text-md text-blue font-bold uppercase m-10">{subject?.name}</p>
         <div className="h-2/4 flex justify-between mr-12 ml-12 gap-7">
           <div className="w-1/5 flex flex-col items-center rounded-2xl bg-blue text-white p-3">
             <img src="https://via.placeholder.com/40" alt="Logo" className="w-1/2 h-4/2 mb-2 mt-8 rounded-full" />
@@ -21,7 +25,7 @@ function ModalSubjectDetail() {
             <button
               className="bg-green-dark text-white text-sm mt-5 px-4 py-2 w-2/3 h-auto rounded-full"
             >
-              <Link to={`/asignaturas/${context.currentData.data.id}/estudiantes`}>COMPLETO</Link>
+              <Link to={`/asignaturas/${subject?.id}/estudiantes`}>COMPLETO</Link>
             </button>
           </div>
           <div className=" w-1/5 flex flex-col items-center rounded-2xl bg-blue text-white p-3">
@@ -31,7 +35,7 @@ function ModalSubjectDetail() {
             <button
               className="bg-yellow text-white text-sm  px-4 py-2 w-2/3 h-auto rounded-full"
             >
-              <Link to={`/asignaturas/${context.currentData.data.id}/profesores`}>VERIFICAR</Link>
+              <Link to={`/asignaturas/${subject?.id}/profesores`}>VERIFICAR</Link>
             </button>
           </div>
           <div className="w-1/5 flex flex-col items-center rounded-2xl bg-blue text-white p-3">
@@ -41,7 +45,7 @@ function ModalSubjectDetail() {
             <button
               className="bg-blood text-white text-sm mt-5 px-4 py-2 w-2/3 h-auto rounded-full"
             >
-              <Link to={`/asignaturas/${context.currentData.data.id}/rotes`}>AGREGAR</Link>
+              <Link to={`/asignaturas/${subject?.id}/rotes`}>AGREGAR</Link>
             </button>
           </div>
           <div className="w-1/5 flex flex-col items-center rounded-2xl bg-blue text-white p-3">
@@ -51,7 +55,7 @@ function ModalSubjectDetail() {
             <button
               className="bg-green-dark text-white text-sm mt-5 px-4 py-2 w-2/3 h-auto rounded-full"
             >
-              <Link to={`/asignaturas/${context.currentData.data.id}/turnos`}>COMPLETO</Link>
+              <Link to={`/asignaturas/${subject?.id}/turnos`}>COMPLETO</Link>
             </button>
           </div>
           <div className="w-1/5 flex flex-col items-center rounded-2xl bg-blue text-white p-3">
@@ -61,7 +65,7 @@ function ModalSubjectDetail() {
             <button
               className="bg-yellow text-white text-sm mt-5 px-4 py-2 w-2/3 h-auto rounded-full"
             >
-              <Link to={`/asignaturas/${context.currentData.data.id}/documentos`}>VERIFICAR</Link>
+              <Link to={`/asignaturas/${subject?.id}/documentos`}>VERIFICAR</Link>
             </button>
           </div>
         </div>
@@ -72,7 +76,6 @@ function ModalSubjectDetail() {
           >
             CERRAR
           </button>
-
         </div>
       </div>
     </div>

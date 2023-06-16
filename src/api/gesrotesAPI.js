@@ -8,6 +8,18 @@ const gesrotesApi = axios.create(
 
 export const getAsignaturas = async () => {
   const res = await gesrotesApi.get('/asignaturas')
-  console.log(res.data)
   return res.data;
 }
+
+export const getAsignaturaById = async (asignaturaId) => {
+  const res = await gesrotesApi.get(`/asignaturas/${asignaturaId}`)
+  console.log(res.data);
+  return res.data;
+}
+
+export const getCarreraById = async (carreraId) => {
+  const res = await gesrotesApi.get(`/carreras/${carreraId}`);
+  return res.data; 
+};
+
+
