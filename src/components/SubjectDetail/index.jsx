@@ -54,7 +54,7 @@ function ModalSubjectDetail() {
             <label>30 turnos registrados</label>
             <button
               className="bg-green-dark text-white text-sm mt-5 px-4 py-2 w-2/3 h-auto rounded-full"
-            >
+              >
               <Link to={`/asignaturas/${subject?.id}/turnos`}>COMPLETO</Link>
             </button>
           </div>

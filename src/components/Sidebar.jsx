@@ -31,7 +31,7 @@ function Sidebar() {
       </div>
       <div className=" mt-4 border-t border-gray- "></div>
       <ul className="pt-6">
-        <h1 className="text-xl font-poppins font-bold mt-4 mb-4">GESTIÓN</h1>
+        <h1 className={`text-xl font-poppins font-bold mt-4 mb-4 ${!open && "scale-0"}`}>GESTIÓN</h1>
         {firstHalf.map((Menu, index) => (
           <li
             key={index}
@@ -50,7 +50,7 @@ function Sidebar() {
 
           </li>
         ))}
-        <h1 className="text-xl font-bold mt-20 -mb-10">MI PERFIL</h1>
+        <h1 className={`text-xl font-bold mt-20 -mb-10 ${!open && "scale-0"}`}>MI PERFIL</h1>
         {secondHalf.map((Menu, index) => (
           <li
             key={index}

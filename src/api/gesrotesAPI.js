@@ -22,4 +22,19 @@ export const getCarreraById = async (carreraId) => {
   return res.data; 
 };
 
+export const getScenery = async () => {
+  const res = await gesrotesApi.get('/escenarios')
+  console.log(res.data);
+  return res.data;
+}
+
+export const postEtiqueta = async (escenarioId, nameTag) => {
+  const res = await gesrotesApi.post('/etiquetas', {
+    escenarioId: escenarioId,
+    name: nameTag
+  })
+  console.log(res.data);
+  return res.data;
+}
+  
 

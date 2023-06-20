@@ -1,16 +1,39 @@
 import React, { useState } from 'react'
+import { useMutation, useQuery } from 'react-query'
+import { getScenery, postEtiqueta } from '../api/gesrotesAPI'
+
 
 function CreateTag() {
-  const [inputValue, setInputValue] = useState('');
-  const [dropdownValue, setDropdownValue] = useState('');
+
+  const { isLoading, data: escenarios, isError, error } = useQuery({
+    queryKey: ['escenarios'],
+    queryFn: getScenery
+  })
+  
+  const tagMutation = useMutation(() => postTag.refetch());
+  const [nameTag, setNameTagValue] = useState('');
+  const [escenariosValue, setEscenariosValue] = useState('');
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    setNameTagValue(event.target.value);
+  };
+  const handleDropdownChange = (event) => {
+    setEscenariosValue(event.target.value);
+    console.log(event.target.value, event.target.data-id);
   };
 
-  const handleDropdownChange = (event) => {
-    setDropdownValue(event.target.value);
+  const handleCreateTag = () => {
+    tagMutation.mutate();
   };
+
+  const postTag = useQuery({
+    queryKey: ['etiqueta'],
+    queryFn: () => postEtiqueta(escenariosValue, nameTag),
+    enabled: false 
+  })
+
+
+
   return (
     <div className="flex mt-5 -ml-10">
       <div className="flex-col m-10 mr-20">
@@ -25,7 +48,7 @@ function CreateTag() {
         <input
           type="text"
           placeholder='Ingrese un nombre'
-          value={inputValue}
+          value={nameTag}
           onChange={handleInputChange}
           className="ml-9 border border-gray-300 rounded-full p-2 w-full" />
       </div>
@@ -40,18 +63,20 @@ function CreateTag() {
           <span className="text-red-500"> *</span>
         </div>
         <select
-          value={dropdownValue}
+          value={escenariosValue}
           onChange={handleDropdownChange}
           className="ml-9 border border-gray-300 rounded-full p-2 w-full"
         >
           <option value="">Seleccione el escenario</option>
-          <option value="Option A">Option A</option>
-          <option value="Option B">Option B</option>
-          <option value="Option C">Option C</option>
+          {escenarios?.map((escenario) => (
+            <option key={escenario.id} value={escenario.id}>{escenario.name}</option>
+          ))}
         </select>
 
         <div className='mt-5'>
-          <button className='bg-blue ml-52 h-10 w-1/3 text-white rounded-lg font-bold'>
+          <button 
+          className='bg-blue ml-52 h-10 w-1/3 text-white rounded-lg font-bold'
+          onClick={handleCreateTag}>
             CREAR
           </button>
         </div>

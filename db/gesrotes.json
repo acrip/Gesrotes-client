@@ -138,6 +138,15 @@
       "id": 5,
       "escenarioId": 3,
       "name": "Primer piso"
+    },
+    {
+      "name": "Ultimos pisos",
+      "id": 6
+    },
+    {
+      "escenarioId": "3",
+      "name": "arreglada ",
+      "id": 7
     }
   ],
   "jornadas": [
