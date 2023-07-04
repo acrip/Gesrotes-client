@@ -28,6 +28,13 @@ export const getScenery = async () => {
   return res.data;
 }
 
+export const getEtiquetas = async () => {
+  const res = await gesrotesApi.get('/etiquetas')
+  console.log(res.data);
+  return res.data;
+}
+
+
 export const postEtiqueta = async (escenarioId, nameTag) => {
   const res = await gesrotesApi.post('/etiquetas', {
     escenarioId: escenarioId,

@@ -1,15 +1,15 @@
 import React from 'react'
+import { useQuery } from 'react-query'
+import { getEtiquetas} from '../api/gesrotesAPI'
 
 function ListTags() {
 
-  const tags = [
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
-    { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
+  const { isLoading, data: tags, isError, error } = useQuery({
+    queryKey: ['etiquetas'],
+    queryFn: getEtiquetas
+  })
+
+  const tags1 = [
     { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
     { id: 1, name: 'Primer piso', hosp: 'Susana Lopez' },
   ];
