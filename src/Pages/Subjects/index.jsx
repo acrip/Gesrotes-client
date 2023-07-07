@@ -1,21 +1,17 @@
-import { useState } from 'react'
-import { useQuery } from 'react-query'
-import { Layout } from '../../components/Layout/index'
-import { CardSubject } from '../../components/CardSubject'
-import { getAsignaturas } from '../../api/gesrotesAPI'
+import { useQuery } from "react-query";
+import { Layout } from "../../components/Layout/index";
+import { CardSubject } from "../../components/Subjects/CardSubject";
+import { getAsignaturas } from "../../api/gesrotesAPI";
 
 function Subjects() {
-
-  const { isLoading, data: subjects, isError, error } = useQuery({
-    queryKey: ['asignaturas'],
-    queryFn: getAsignaturas
-  })
-
-  const [placeholder, setPlaceholder] = useState('Ingrese el nombre de la asignatura');
+  const { data: subjects } = useQuery({
+    queryKey: ["asignaturas"],
+    queryFn: getAsignaturas,
+  });
 
   return (
     <Layout>
-      <div className='bg-white-soft mt-5 rounded-xl border mr-5 h-full mb-20'>
+      <div className="bg-white-soft mt-5 rounded-xl border mr-5 h-full mb-20">
         {subjects && subjects.length > 0 ? (
           <div>
             <div className="flex justify-center mt-8 mb-8">
@@ -23,7 +19,7 @@ function Subjects() {
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder={placeholder}
+                    placeholder="Buscar asignatura"
                     className="text-lg font-bold pl-10 pr-3 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-blue"
                   />
                   <svg
@@ -41,7 +37,7 @@ function Subjects() {
                 </div>
               </div>
             </div>
-            <div className='grid grid-cols-3 m-5 gap-5'>
+            <div className="grid grid-cols-3 m-5 gap-5">
               {subjects.map((subject) => (
                 <CardSubject key={subject.id} data={subject} />
               ))}
@@ -57,4 +53,4 @@ function Subjects() {
   );
 }
 
-export { Subjects }
+export { Subjects };

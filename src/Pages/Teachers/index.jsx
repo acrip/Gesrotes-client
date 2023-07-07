@@ -1,9 +1,12 @@
-import React from 'react'
 import { Layout } from '../../components/Layout'
 
 function Teachers() {
   return (
-    <Layout>Teachers</Layout>
+    <Layout>
+      <div className="grid place-items-center col-span-3 text-6xl font-bold mt-60 mb-80 text-gray-200 bg-white">
+        En construcción
+      </div>
+    </Layout>
   )
 }
 

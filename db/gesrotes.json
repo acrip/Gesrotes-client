@@ -3,18 +3,21 @@
     {
       "id": 1,
       "carreraId": 1,
+      "carreraName": "Enfermeria",
       "periodoId": 1,
       "name": "Cuidado de enfermeria en salud mental"
     },
     {
       "id": 2,
       "carreraId": 1,
+      "carreraName": "Enfermeria",
       "periodoId": 1,
       "name": "Cuidado al adulto mayor"
     },
     {
       "id": 3,
       "carreraId": 2,
+      "carreraName": "Enfermeria",
       "periodoId": 1,
       "name": "Salud para deportistas"
     }
@@ -117,61 +120,56 @@
     {
       "id": 1,
       "escenarioId": 1,
-      "name": "Primer piso"
+      "name": "Primer piso",
+      "nameScenery": "Hospital Santa Elena"
     },
     {
       "id": 2,
       "escenarioId": 2,
-      "name": "Segundo piso"
+      "name": "Segundo piso",
+      "nameScenery": "Hospital Santa Elena"
     },
     {
       "id": 3,
       "escenarioId": 1,
-      "name": "Segundo piso"
+      "name": "Segundo piso",
+      "nameScenery": "Hospital Santa Elena"
     },
     {
       "id": 4,
       "escenarioId": 3,
-      "name": "Segundo piso"
-    },
-    {
-      "id": 5,
-      "escenarioId": 3,
-      "name": "Primer piso"
-    },
-    {
-      "name": "Ultimos pisos",
-      "id": 6
-    },
-    {
-      "escenarioId": "3",
-      "name": "arreglada ",
-      "id": 7
+      "name": "Segundo piso",
+      "nameScenery": "Hospital Santa Elena"
     },
     {
       "escenarioId": "1",
-      "name": "uwenifweunfiewq",
-      "id": 8
-    },
-    {
-      "escenarioId": "1",
-      "name": "uwenifweunfiewq",
+      "nameScenery": "asdadsas",
+      "name": "dsafefafafadfadsf",
       "id": 9
     },
     {
-      "escenarioId": "2",
-      "name": "Prueba reunion",
-      "id": 10
+      "escenarioId": "1",
+      "nameScenery": "Hospital Susana Lopez",
+      "name": "Redes 3",
+      "id": 12
+    },
+    {
+      "escenarioId": "3",
+      "nameScenery": "Hospital Santa Elena",
+      "name": "Redes 4",
+      "id": 13
+    },
+    {
+      "escenarioId": "3",
+      "nameScenery": "Hospital Santa Elena",
+      "name": "Redes 4",
+      "id": 14
     },
     {
       "escenarioId": "1",
-      "name": "PRUEBA NETLIFY",
-      "id": 11
-    },
-    {
-      "escenarioId": "2",
-      "name": "prueba reunion 11",
-      "id": 12
+      "nameScenery": "Hospital Susana Lopez",
+      "name": "ocho",
+      "id": 15
     }
   ],
   "jornadas": [
@@ -217,7 +215,7 @@
     },
     {
       "id": 2,
-      "escenarioId": 3,
+      "escenarioId": 1,
       "name": "Pediatria"
     }
   ],
